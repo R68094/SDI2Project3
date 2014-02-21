@@ -2,7 +2,6 @@
 // Timothy Binney
 // SDI Project 3
 // Term Number 1402
-// Dragon Battle
 
 var myWeapons = ["bow", "sword", "daggers"]; //array used in solofight function
 var myPrompt;                               //procedure
@@ -13,7 +12,8 @@ var recieveClassInfo;                       //json/array argument function1
 var lootDistributed;                        // function4 
 var coinsLooted = 2000;
 var lootFunction;
-var goSeperateWays;                         // function5 using boolean argument              
+var goSeperateWays;                        // function5 using boolean argument              
+var stringData =  ["from afar", "up close", "from behind"];      
 
 console.log("After a long journey you finally reach the dragons lair with your friendly adventurers!")
 
@@ -72,9 +72,9 @@ console.log(json2)
 
 console.log("You feel like you didn't do much last time and leap into action")
 
-var attackFromRandom = function () {
+var attackFromRandom = function (stringData) {
     
-    var myPosition = ["from afar", "up close", "from behind"],
+    var myPosition = stringData;
         weaponChoice = myWeapons;
     for (var damagePosition = 0; damagePosition < myPosition.length; damagePosition++) {
         var positionName = myPosition[damagePosition],
@@ -86,7 +86,7 @@ var attackFromRandom = function () {
     };         
 }
 
-soloFight = attackFromRandom ();
+soloFight = attackFromRandom (stringData);
 
 console.log("The dragon is finished and the loot is yours!!!!")
 console.log("You open the treasure chest the dragon was guarding")
@@ -101,3 +101,37 @@ var lootDistributed = function (coinsLooted) {
     
     
 }
+
+
+lootFunction = lootDistributed(coinsLooted);
+
+if (lootFunction === true) {
+    console.log("We can each have at least 500 coins!")
+}
+    else {
+        console.log("We each will get less then 500 coins each.")
+
+};
+
+
+
+var goSeperateWays = function() {
+    splitUp = prompt("Would you Like to go home now or wait a bit?")
+    
+    if (splitUp === "go home") {
+    console.log("The adventurers take their loot and " + splitUp + " to their homelands.")
+    }
+    else {
+    console.log("The adventurers stick around to chat and then " + splitUp + " to go to their homelands.")
+        
+    }
+    
+    return(splitUp); 
+};
+
+var partyDisband = goSeperateWays();
+
+
+
+
+
