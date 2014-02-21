@@ -67,3 +67,37 @@ returnValue = getBattle(1500);
 
 console.log("The dragon returns to fight till its last breathe!")
 console.log("The rogue runs in terror with whatever loot he could find.")
+json2.companions.pop("Rogue")   // array method
+console.log(json2)
+
+console.log("You feel like you didn't do much last time and leap into action")
+
+var attackFromRandom = function () {
+    
+    var myPosition = ["from afar", "up close", "from behind"],
+        weaponChoice = myWeapons;
+    for (var damagePosition = 0; damagePosition < myPosition.length; damagePosition++) {
+        var positionName = myPosition[damagePosition],
+            weaponForSpot = weaponChoice[damagePosition];
+      
+    console.log("You leap into action and attack the dragon with your " + weaponForSpot + "," + positionName) 
+        
+    
+    };         
+}
+
+soloFight = attackFromRandom ();
+
+console.log("The dragon is finished and the loot is yours!!!!")
+console.log("You open the treasure chest the dragon was guarding")
+console.log("I hope we each can have 500 coins at least!")
+
+var lootDistributed = function (coinsLooted) {
+    
+    if (coinsLooted >= 2000) {
+    return true;
+    }
+    return false;
+    
+    
+}
